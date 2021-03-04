@@ -19,6 +19,10 @@
                     <x-jet-nav-link href="{{ route('category.index') }}">
                         Categories
                     </x-jet-nav-link>
+
+                    <x-jet-nav-link href="{{ route('product.index') }}">
+                        Products
+                    </x-jet-nav-link>
                 </div>
             </div>
 
