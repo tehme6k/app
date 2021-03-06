@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\FgboxController;
+use App\Http\Controllers\IboxController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +16,7 @@ use App\Http\Controllers\FgboxController;
 |
 */
 
-Route::resource('fgbox', FgboxController::class);
+Route::resource('ibox', IboxController::class);
 
 Route::get('/', function () {
     return view('welcome');

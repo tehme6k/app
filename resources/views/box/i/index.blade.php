@@ -2,7 +2,7 @@
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
 
-            Finished Goods Retention <b></b>
+            Ingredient Retention <b></b>
 
 
         </h2>
@@ -40,7 +40,7 @@
                                 <tr>
                                     <th>{{ $box->id }}</th>
                                     <td>
-                                        <a href="{{route('fgbox.show', $box->id)}}">{{ $box->name }}</a>
+                                        <a href="{{route('ibox.show', $box->id)}}">{{ $box->name }}</a>
                                     </td>
 
 
@@ -70,7 +70,7 @@
                         <div class="card-header"> Add Retention</div>
                         <div class="card-body">
 
-                            <form action="{{ route('fgbox.store') }}" method="POST" >
+                            <form action="{{ route('ibox.store') }}" method="POST" >
                                 @csrf
                                 {{--                 <div class="form-group">--}}
                                 {{--                    <label for="staticEmail2" class="visually-hidden">Box</label>--}}

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Fgretention;
 use Illuminate\Http\Request;
 
-class FgretentionController extends Controller
+class IretentionController extends Controller
 {
 
     public function index()
@@ -23,22 +23,22 @@ class FgretentionController extends Controller
         //
     }
 
-    public function show(Fgretention $fgretention)
+    public function show(Iretention $iretention)
     {
         //
     }
 
-    public function edit(Fgretention $fgretention)
+    public function edit(Iretention $iretention)
     {
         //
     }
 
-    public function update(Request $request, Fgretention $fgretention)
+    public function update(Request $request, Iretention $iretention)
     {
         //
     }
 
-    public function destroy(Fgretention $fgretention)
+    public function destroy(Fgretention $iretention)
     {
         //
     }

@@ -2,22 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Fgbox;
-use App\Models\Fgretention;
+use App\Models\Ibox;
+use App\Models\Iretention;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Auth;
 use DB;
 
-class FgboxController extends Controller
+class IboxController extends Controller
 {
 
     public function index()
     {
-        $listItems = FGBox::latest()->take(2)->get();
-        $boxes = FGBox::all();
+        $listItems = IBox::latest()->take(2)->get();
+        $boxes = IBox::all();
         // $categories = DB::table('categories')->latest()->paginate(5);
-        return view('box.fg.index', compact('boxes', 'listItems'));
+        return view('box.i.index', compact('boxes', 'listItems'));
     }
 
     public function create()
@@ -27,7 +27,7 @@ class FgboxController extends Controller
 
     public function store(Request $request)
     {
-        $latest_box = Fgbox::latest()->first();
+        $latest_box = Ibox::latest()->first();
         if($latest_box == NULL){
             $box_type = "first";
 //            $box_id = 0;
@@ -37,8 +37,8 @@ class FgboxController extends Controller
 
         if($box_type == "first"){
             $box_id = 1;
-            $box = new Fgbox;
-            $box->name = "FG." . $box_id;
+            $box = new Ibox;
+            $box->name = "I." . $box_id;
             $box->save();
             $box_id = DB::getPdo()->lastInsertId();
         }elseif($box_type == "new"){
@@ -46,15 +46,15 @@ class FgboxController extends Controller
             $boxInfo = explode(".", $boxName);
             $number = $boxInfo[1];
             $number++;
-            $box = new Fgbox;
-            $box->name = "FG." . $number;
+            $box = new Ibox;
+            $box->name = "I." . $number;
             $box->save();
             $box_id = DB::getPdo()->lastInsertId();
         }else{
             $box_id = $box_type;
         }
 
-        $retentions = new FGRetention;
+        $retentions = new IRetention;
         $retentions->box_id = $box_id;
         $retentions->user_id = Auth::user()->id;
         $retentions->product_id = $request->pn;
@@ -67,26 +67,26 @@ class FgboxController extends Controller
         return Redirect()->back()->with('success','Retention Inserted Successfully');
     }
 
-    public function show(Fgbox $fgbox)
+    public function show(Ibox $ibox)
     {
-        $id = $fgbox->id;
-        $retentions = Fgretention::where('box_id','=', $id)->get();
+        $id = $ibox->id;
+        $retentions = Iretention::where('box_id','=', $id)->get();
 
 
-        return view('box.fg.show', compact('fgbox', 'retentions'));
+        return view('box.i.show', compact('ibox', 'retentions'));
     }
 
-    public function edit(Fgbox $fgbox)
-    {
-        //
-    }
-
-    public function update(Request $request, Fgbox $fgbox)
+    public function edit(Ibox $ibox)
     {
         //
     }
 
-    public function destroy(Fgbox $fgbox)
+    public function update(Request $request, Ibox $ibox)
+    {
+        //
+    }
+
+    public function destroy(Ibox $ibox)
     {
         //
     }

@@ -2,7 +2,7 @@
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
 
-            Finished Goods Retention <b></b>
+            Ingredient Retention <b></b>
 
 
         </h2>
@@ -24,7 +24,7 @@
                             </div>
                         @endif
 
-                        <div class="card-header">{{$fgbox->name}}</div>
+                        <div class="card-header">{{$ibox->name}}</div>
 
                         <table class="table">
                             <thead>

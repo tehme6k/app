@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Fgbox extends Model
+class Ibox extends Model
 {
     protected $fillable = [
         'name',
@@ -13,7 +13,7 @@ class Fgbox extends Model
 
 
     public function retentions(){
-        return $this->hasMany(Fgretetions::class);
+        return $this->hasMany(Iretetions::class);
 
     }
 

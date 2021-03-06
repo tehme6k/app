@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Fgretention extends Model
+class Iretention extends Model
 {
     public function box(){
-        return $this->belongsTo(Box::class);
+        return $this->belongsTo(IBox::class);
     }
 
     public function product(){
