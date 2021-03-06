@@ -39,8 +39,11 @@
                                 <tr>
                                     <th scope="row">{{ $product->id }}</th>
                                     <td>{{ $product->name }}</td>
-                                    <td>{{ $product->category->name }}</td>
-
+                                    @if($product->category_id == 0)
+                                        <td style="color:red">None Set</td>
+                                    @else
+                                        <td>{{ $product->category->name }}</td>
+                                    @endif
 
                                     </td>
 
