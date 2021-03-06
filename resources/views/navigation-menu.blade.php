@@ -23,6 +23,10 @@
                     <x-jet-nav-link href="{{ route('product.index') }}">
                         Products
                     </x-jet-nav-link>
+
+                    <x-jet-nav-link href="{{ route('ibox.index') }}">
+                        I Retention
+                    </x-jet-nav-link>
                 </div>
             </div>
 
