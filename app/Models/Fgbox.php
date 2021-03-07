@@ -6,16 +6,17 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Ibox extends Model
+class Fgbox extends Model
 {
     use SoftDeletes;
+
     protected $fillable = [
         'name',
     ];
 
 
     public function retentions(){
-        return $this->hasMany(Iretetions::class);
+        return $this->hasMany(Fgretetions::class);
 
     }
 

@@ -4,9 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Iretention extends Model
 {
+    use SoftDeletes;
     public function box(){
         return $this->belongsTo(IBox::class);
     }

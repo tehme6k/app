@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateIboxesTable extends Migration
+class CreateFgretentionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class CreateIboxesTable extends Migration
      */
     public function up()
     {
-        Schema::create('iboxes', function (Blueprint $table) {
+        Schema::create('fgretentions', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('status')->default('open');
+            $table->integer('box_id');
+            $table->integer('user_id');
+            $table->string('lot');
+            $table->date('prod_date');
+            $table->integer('exp');
             $table->timestamps();
             $table->SoftDeletes();
         });
@@ -29,6 +32,6 @@ class CreateIboxesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('iboxes');
+        Schema::dropIfExists('fgretentions');
     }
 }
